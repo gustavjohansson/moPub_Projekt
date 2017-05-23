@@ -1,0 +1,32 @@
+
+<div class="menuBackgroundRed">
+<img src="logo_white.png"/>
+
+  <form style="text-align: center; margin-top: 30px;">
+    <div>
+      <!-- CHANGE STYLE OR GET THIS WORKING WITH ONS-INPUT -->
+      <input ng-model="userEmail" id="username" modifier="underbar" placeholder="Username" float></ons-input>
+    </div>
+
+    <div>
+      <!-- CHANGE STYLE OR GET THIS WORKING WITH ONS-INPUT -->
+      <input ng-model="userPassword" id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
+    </div>
+    <div>
+      <!-- CHANGE STYLE OR GET THIS WORKING WITH ONS-INPUT -->
+      <input ng-model="userPasswordCheck" id="password" modifier="underbar" type="password" placeholder="Confirm Password" float></ons-input>
+    </div>
+
+    <!-- CSSA DENNA SER UT SOM EN PÅSE PUNG -->
+    <span class="logregErrorMessage">{{error}}</span>
+
+    <div style="margin-top: 30px;">
+      <ons-button class="sign-in-button" ng-click="createUser(userEmail, userPassword, userPasswordCheck)">Register</ons-button>
+    </div>
+  </form>
+
+<div id="register">
+  <a href="#!/login"><u>Already have an account?</u></a>
+</div>
+
+<div>

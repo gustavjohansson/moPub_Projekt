@@ -1,0 +1,79 @@
+
+
+<ons-toolbar class="title" id="titleToolbar">
+
+  <a href="#!/groups">
+<div class="left"><ons-back-button style="color:white;"></ons-back-button></div>
+</a>
+<div class="center" id="centerToolbar" style="color:white;"><span>Group</span></div>
+
+<div class="right">
+  <ons-toolbar-button style="color:white;font-size:150%" ng-click="showDialog('create-member-window')"><img id="toolbarRightIconEvents" src="add-member.png"></img></ons-toolbar-button>
+</div>
+</ons-toolbar>
+
+
+<div style="margin-top:70px;">
+
+  <div class="profileBackgroundRed">
+
+  <h1 id="special-header">{{specificGroup.group_name}}</h1>
+
+    <p>{{specificGroup.group_description}}</p>
+
+  <div class="">
+
+    <h1>Members</h1>
+
+
+  <div ng-repeat="member in specificGroup.members" id="specificGroup" class="colElementsGROUPS col-xs-12">
+
+<a href="#!/profilePage/{{member.user_id}}">
+<div class="col-xs-8 col-xs-offset-1">
+  {{member.username}}
+</div>
+
+<div class="col-xs-1">
+
+  <span class="glyphicon glyphicon-menu-right"></span></div>
+</a>
+</div>
+
+<div ng-if="specificGroup.events" class="col-xs-12">
+  <h1>Active Events</h1>
+
+  <div style="color:white;" ng-repeat="event in specificGroup.events">
+    {{event.event_name}}
+  </div>
+</div>
+
+  <br>
+
+  </div>
+
+  </div>
+
+
+<ons-dialog id="create-member-window">
+  <div id="popup-window">
+    <div id="close-btn"><span ng-click="hideDialog('create-member-window')" class="glyphicon glyphicon-remove right" id="small-glyph-button"></span></div>
+      <div id="dialog-window2">
+
+    <!-- <form> --> <div class="formsPopup">
+      <div><input ng-model="memberName" type="text" class="text-input text-input--underbar" placeholder="Name" value=""></div>
+  <!-- </form> --></div>
+
+
+
+<div>
+<p id="create-group">
+<!-- GÖR EN CREATE-GROUP FUNKTION HÄR -->
+<button class="create-button" ng-click="addMemberToGroup('create-member-window', memberName)" style="width: 70%; margin: 0 auto;">Add member</button>
+</p>
+</div>
+  </div>
+</div>
+</ons-dialog>
+
+
+</div>

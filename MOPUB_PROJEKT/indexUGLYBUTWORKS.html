@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="carbonListApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+
+
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+
+
+    <link rel="stylesheet" href="node_modules/onsenui/css/onsenui.css"/>
+    <link rel="stylesheet" href="node_modules/onsenui/css/onsen-css-components.css"/>
+    <link rel="stylesheet" type="text/css" href="index_wille.css">
+    <script src="node_modules/onsenui/js/onsenui.js"></script>
+
+    <script src="node_modules/onsenui/js/angular-onsenui.js"></script>
+    <script src="node_modules/onsenui/js/angular-onsenui.min.js"></script>
+
+
+    <script>
+    // ons.platform.select('android')
+    ons.platform.select('ios')
+    </script>
+
+
+    <title>CarbonList</title>
+
+
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-messaging.js"></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCJ_2Ys6pF0ZFQvWZoFNpgRV-2hqMOovoc",
+        authDomain: "projekt-mopub.firebaseapp.com",
+        databaseURL: "https://projekt-mopub.firebaseio.com",
+        projectId: "projekt-mopub",
+        storageBucket: "projekt-mopub.appspot.com",
+        messagingSenderId: "119778560222"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+
+    <script src="js/app.js"></script>
+    <script src="js/carbonService.js"></script>
+    <script src="js/firebaseService.js"></script>
+    <script src="js/firebaseCtrl.js"></script>
+
+  </head>
+  <body>
+    <!-- The navigator object holds pages -->
+
+    <ons-navigator class="appNavigator" page="pageMain.html"></ons-navigator>
+
+    <!-- This is the first page, naming convention is to use ."html" for page templates (they can also be placed in separate files, so this makes kind of sense). -->
+
+
+
+    <ons-template id="pageMain.html">
+      <ons-page id="pageMain">
+        <ons-toolbar class="title">
+
+
+
+          <div class="center" style="color:white;"><b>Relaxation Practices</b></div>
+          <div class="right">
+            <ons-toolbar-button style="color:white;" onclick="ons.notification.confirm({message: 'Are you ready?'})">Button</ons-toolbar-button>
+          </div>
+        </ons-toolbar>
+
+
+        <ons-tabbar>
+          <ons-tab label="Feet" page="feet.html" icon="file"></ons-tab>
+          <ons-tab label="Shoulders" page="shoulders.html" icon="file"></ons-tab>
+          <ons-tab label="Face" page="face.html" icon="file"></ons-tab>
+          <ons-tab label="About" page="about.html" icon="file" active></ons-tab>
+        </ons-tabbar>
+      </ons-page>
+    </ons-template>
+
+    <ons-template id="feet.html">
+      <ons-page id="feet">
+        <div class="pageContent">
+          <h3 class="pageTitle">Feel your feet</h3>
+          <ul>
+            <li>Stand on your feet.</li>
+            <li>Experience the contact with the ground.</li>
+            <li>Feel into the soles of the feet.</li>
+            <li>Feel the knees.</li>
+            <li>The hips.</li>
+            <li>The spine.</li>
+            <li>Shoulders.</li>
+            <li>Neck.</li>
+            <li>Head.</li>
+            <li>Feel the connection between the top of the head and the feet.</li>
+          </ul>
+          <center>
+            <div class="switchText">
+              Mark as done:
+            </div>
+            <div class="switchButton">
+              <ons-switch></ons-switch>
+            </div>
+          </center>
+        </div>
+      </ons-page>
+    </ons-template>
+
+    <ons-template id="shoulders.html">
+      <ons-page id="shoulders">
+        <div class="pageContent">
+          <h3 class="pageTitle">Feel your shoulders</h3>
+
+          <ul>
+            <li>Let your arms hang loose.</li>
+            <li>Become aware of the shoulders.</li>
+            <li>Slightly lift one shoulder and release it.</li>
+            <li>Let the shoulder come all the way down.</li>
+            <li>Lift the other shoulder and release it.</li>
+            <li>Alternate three more times on each side.</li>
+            <li>Experience the breath flowing in and out of the body.</li>
+          </ul>
+
+          <div class="extraContent">
+
+
+            <div class="switchText">
+              Mark as done:
+            </div>
+            <div class="switchButton">
+              <ons-switch></ons-switch>
+            </div>
+          </div>
+
+        </div>
+      </ons-page>
+    </ons-template>
+
+    <ons-template id="face.html">
+      <ons-page id="face">
+        <div class="pageContent">
+          <h3 class="pageTitle">Feel your face</h3>
+
+          <ul>
+            <li>Become aware of your face.</li>
+            <li>Feel the forehead.</li>
+            <li>The eyebrows.</li>
+            <li>Eyes.</li>
+            <li>Nose.</li>
+            <li>Nostrils.</li>
+            <li>Air flowing through the nostrils.</li>
+            <li>Cheeks.</li>
+            <li>Jaw.</li>
+            <li>Lips.</li>
+            <li>Tongue.</li>
+            <li>Whole of the head.</li>
+            <li>The space surrounding the head.</li>
+          </ul>
+          <center>
+
+            <div class="switchText">
+              Mark as done:
+            </div>
+            <div class="switchButton">
+              <ons-switch></ons-switch>
+            </div>
+          </center>
+
+        </div>
+      </ons-page>
+    </ons-template>
+
+    <ons-template id="about.html">
+      <ons-page id="about">
+        <div class="pageContent" style="text-align:center;">
+          <h3 class="pageTitle">About</h3>
+
+          <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed nulla lorem. Nam scelerisque condimentum magna nec fermentum.
+              Ut eros tortor, tempor ac posuere venenatis, ullamcorper non turpis.
+              Cras hendrerit dignissim porttitor. Aenean egestas nisi urna, vel finibus velit tempus in.</p>
+            </div>
+          </div>
+        </ons-page>
+      </ons-template>
+
+      <script>
+      function showPage(page) {
+        // jQuery returns an array of DOM objects, we want the first DOM object
+        // which is the have that has the pushPage function.
+        $('.appNavigator')[0].pushPage(page)
+      }
+
+  //     window.fn = {};
+  //
+  // window.fn.open = function() {
+  //   console.log("yo dood")
+  //   var menu = document.getElementById('menu');
+  //   console.log(menu)
+  //   menu.open();
+  // };
+  //
+  // window.fn.load = function(page) {
+  //   var content = document.getElementById('content');
+  //   var menu = document.getElementById('menu');
+  //   content.load(page)
+  //     .then(menu.close.bind(menu));
+  // };
+      </script>
+  </body>
+
+</html>

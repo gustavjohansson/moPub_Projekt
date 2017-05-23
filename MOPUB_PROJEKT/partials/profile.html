@@ -1,0 +1,69 @@
+
+<ons-toolbar class="title" id="titleToolbar">
+
+<a href="#!/menu">
+<div class="left"><ons-back-button style="color:white;"></ons-back-button></div>
+</a>
+<div class="center" id="centerToolbar" style="color:white;"><span>You</span></div>
+
+<div class="right">
+  <ons-toolbar-button style="color:white;font-size:150%"ng-click="showDialog('edit-profile-window')"><img id="toolbarRightIconMyProfile" src="edit-profile.png"></img></ons-toolbar-button>
+</div>
+</ons-toolbar>
+
+
+<div style="margin-top:70px;" class="profileBackgroundRed">
+
+<img style="background-color: white;width:100px;height:100px;overflow:hidden;background-size:cover;" src="missing-profile-pic.png"/>
+
+<h1>{{specificProfile.username}}<span ng-if="specificProfile.age">, {{specificProfile.age}}</span></h1>
+
+<h2>{{specificProfile.city}}</h2>
+
+<p>{{specificProfile.description}}</p>
+
+<div class="profileEventList">
+  <h1>Your events</h1>
+<div  ng-repeat="event in currentUserEvents" class="colElements col-xs-11 profile-events">
+
+
+
+<div class="col-xs-8 col-xs-offset-1">
+  <p>{{event.event_name}}</p>
+</div>
+<div class="col-xs-1">
+  <span ng-click="deleteOwnEvent(event.event_id)" class="glyphicon glyphicon-remove"></span>
+</div>
+
+</div>
+
+<br>
+
+</div>
+
+</div>
+
+
+<ons-dialog id="edit-profile-window">
+  <div id="popup-window">
+    <div id="close-btn"><span ng-click="hideDialog('edit-profile-window')" class="glyphicon glyphicon-remove right" id="small-glyph-button"></span></div>
+      <div id="dialog-window2">
+
+    <!-- <form> --> <div class="formsPopup">
+      <div><input ng-model="profileAge" type="text" class="text-input text-input--underbar" placeholder="Age"></div>
+    <div><input ng-model="profileCity" type="text" class="text-input text-input--underbar" placeholder="City"></div>
+    <div><input ng-model="profileDescription" type="text" class="text-input text-input--underbar" placeholder="Description"></div>
+
+  <!-- </form> --></div>
+
+
+
+<div>
+<p id="create-group">
+<!-- GÖR EN CREATE-GROUP FUNKTION HÄR -->
+<button class="create-button" ng-click="editProfile('edit-profile-window', profileAge, profileCity, profileDescription)" style="width: 70%; margin: 0 auto;">Edit profile</button>
+</p>
+</div>
+  </div>
+</div>
+</ons-dialog>

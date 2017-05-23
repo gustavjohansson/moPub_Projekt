@@ -1,0 +1,52 @@
+där man är:
+bara en röd prick
+
+när man gör ett nytt event:
+läggs en marker PÅ denna prick, som har en egen animation: bounce.
+PRICK: RÖD, fadear ut ju längre ut den kmr
+Denna ska också vara en annan färg, samt custom picture.
+
+
+
+
+
+TO DO!!!!!
+En "find me" knapp - som hämtar din geolocation igen.
+
+
+ta bort fula knapparna på googlemappen, , - samt den där personen för 3D view
+
+
+LÄGG TILL ID SAMT ANVÄNDARNAMN FÖR VARJE USER! NU FINNS DET BARA ID
+När du ladda ner alla users i INIT är det skitnice!
+När du listar users i grupperna t.ex. kan du bara plocka ut alla namn från user-listan!
+
+EYYYY:
+för edit profile, så ja inte ska kunna editta någon annans profil, kör då:
+if (user == $routeParams.personID) {
+	SHOW EDIT ICON WITH a-tag to EDIT PAGE
+	}
+else {
+	DONT SHOW SHIT
+}
+Detta ska inte vara javascript såklart, utan detta är HTML kod med t.ex. ng-show/ng-hide
+
+
+
+COOKIES//FIREBASECALLBACK (lynn)
+
+
+HEADERN SKA VARA STATIC!!!!!!
+
+Tänk också på overflow-y;
+prova lägg in jättemånga grupper samt events och se hur det blir, troligtvis fuckar det upp
+
+
+ONCLICK EVENT:
+ANTINGEN att diven expandas ner och man får additonal info, samt att man DÄR kan klicka för att komma
+till kartan för det eventet.
+ALTERNATIVT att när man klickar på eventet kommer man direkt till kartan och centrerar kartan på det
+eventet personen precis klickade på.
+
+VI HAR REMOVEPERSONFROMGROUP!!!
+Man ska kunna ta bort folk från grupperna!!

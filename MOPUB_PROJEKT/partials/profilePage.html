@@ -1,0 +1,47 @@
+
+<ons-toolbar class="title" id="titleToolbar">
+
+  <a href="#!/specific/{{specificGroup}}">
+<div class="left"><ons-back-button style="color:white;"></ons-back-button></div>
+</a>
+<div class="center" id="centerToolbar" style="color:white;"><span>Profile</span></div>
+
+</ons-toolbar>
+
+
+<div style="margin-top:70px;" class="profileBackgroundRed">
+
+<img src="missing-profile-pic.png"/>
+
+<h1>{{specificProfile.username}}<span ng-if="specificProfile.age">, {{specificProfile.age}}</span></h1>
+
+<h2>{{specificProfile.city}}</h2>
+
+<p>{{specificProfile.description}}</p>
+
+</div>
+
+
+<ons-dialog id="edit-profile-window">
+  <div id="popup-window">
+    <div id="close-btn"><span ng-click="hideDialog('edit-profile-window')" class="glyphicon glyphicon-remove right" id="small-glyph-button"></span></div>
+      <div id="dialog-window">
+
+    <!-- <form> --> <div class="formsPopup">
+      <div><input ng-model="profileAge" type="text" class="text-input text-input--underbar" placeholder="Age"></div>
+    <div><input ng-model="profileCity" type="text" class="text-input text-input--underbar" placeholder="City"></div>
+    <div><input ng-model="profileDescription" type="text" class="text-input text-input--underbar" placeholder="Description"></div>
+
+  <!-- </form> --></div>
+
+
+
+<div>
+<p id="create-group">
+<!-- GÖR EN CREATE-GROUP FUNKTION HÄR -->
+<button class="create-button" ng-click="editProfile('edit-profile-window', profileAge, profileCity, profileDescription)" style="width: 70%; margin: 0 auto;">Edit profile</button>
+</p>
+</div>
+  </div>
+</div>
+</ons-dialog>
